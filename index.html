@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="./jquery-1.9.1.js"></script>
+        <script src="./graffiti.js"></script>
+
+        <script type="text/javascript">
+            jQuery.event.add(window, 'load', function(){
+                    var hello =[ "hello.awk", "hello.bat", "hello.bf", "hello.c", "hello.c++", "hello.cma", "hello.cs", "hello.f90", "hello.go", "hello.hs", "hello.hsp", "hello.java", "hello.jsx", "hello.l", "hello.pas", "hello.php", "hello.pl", "hello.ps", "hello.rb", "hello.scala", "hello.scm", "hello.sh", "hello.sql", "hello.tex", "hello.wc" ];
+
+                    var graffiti = Graffiti.getGraffiti('helloworld');
+                    var width = $(document).width();
+                    var height = $(document).height();
+                    graffiti.setSize(width, height);
+                    graffiti.setFontSize(16);
+                    console.log(hello.length);
+                    for(var i=0;i<hello.length;i++){
+                        graffiti.setColor(Graffiti.getRandomColor());
+                        graffiti.draw('./code/' + hello[i]);
+                    }
+                    Graffiti.drawBackground[0](graffiti.getCanvas());
+            });
+        </script>
+
+    </head>
+    <body style="padding:0px;margin:0px;">
+        <canvas id="helloworld" />
+    </body>
+</html>
+
