@@ -11,14 +11,14 @@
                     var hello =[ "hello.awk", "hello.bat", "hello.bf", "hello.c", "hello.c++", "hello.cma", "hello.cs", "hello.f90", "hello.go", "hello.hs", "hello.hsp", "hello.java", "hello.jsx", "hello.l", "hello.pas", "hello.php", "hello.pl", "hello.ps", "hello.rb", "hello.scala", "hello.scm", "hello.sh", "hello.sql", "hello.tex", "hello.wc" ];
 
                     var graffiti = Graffiti.getGraffiti('helloworld');
-                    var width = $(document).width();
-                    var height = $(document).height();
+                    var width = $(document).width() - 15;
+                    var height = $(document).height() -15;
                     graffiti.setSize(width, height);
                     graffiti.setFontSize(16);
                     console.log(hello.length);
                     for(var i=0;i<hello.length;i++){
                         graffiti.setColor(Graffiti.getRandomColor());
-                        graffiti.draw('./code/' + hello[i]);
+                        graffiti.draw('./resources/' + hello[i]);
                     }
                     Graffiti.drawBackground[0](graffiti.getCanvas());
             });
